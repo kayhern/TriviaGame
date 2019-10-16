@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>--- Trivia Game ---</title>
 </head>
 <body>
-
     <!--Need a Start Window-->
     <!--Incorporate Bootstrap into CSS-->
-<div class="startwindow">
-   <h1></h1> Totally Trivia!</h1><br>
-   <h2>Space Edition</h2>
-    <button>Start!</button>
+    <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                
+              </div>
+              <div class="col-sm" id="content">
+                    <h1>Totally Trivia!</h1>
+                    <h2>Space Edition</h2>
+                    <p>You will have 120 seconds to complete 6 trivia questions about space. Are you ready?!</p>
+                    <button type="button" class="btn btn-primary">Start</button>
+              </div>
+              <div class="col-sm">
+                
+              </div>
+            </div>
+          </div>
 </div>
     <!--Need a Quiz Window-->
+    <!--Need a Score/Results Window-->
 
 <div class="quiz">
     <span class = "timer">Time Remaining: </span>
@@ -25,7 +38,7 @@
         1. 
     </span>
 </div>
-    <!--Need a Score/Results Window-->
+    
 
     <!--Javascript File Reference-->
     <script src = "assets/javascript/game.js"></script>

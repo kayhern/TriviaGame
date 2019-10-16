@@ -1,4 +1,4 @@
-//first window pops up - start button
+//first window pops up - start button - resolve this by using CSS function
 
 //when start button is clicked: first window disappears, second window pops up, timer begins
 
@@ -21,3 +21,5 @@
 //when user selects answer to question8 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
 
 //when user clicked finish: popup window showing number of correct, number of incorrect, number of unanswered
+
+//in CSS define button and timer set display: none
