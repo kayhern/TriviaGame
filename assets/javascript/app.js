@@ -4,16 +4,33 @@ $(document).ready(function(){
     let numberIncorrect = 0;
     let numberUnanswered = 0;
     let timeQuiz = 1200;
+    let elementAppear = [];
+
+    //writing questions in as javascript:
+    let question1 = "";
+    let question2 = "";
+    let question3 = "";
+    let question4 = "";
+    let question5 = "";
+    let question6 = "";
+    let question7 = "";
+    let question8 = "";
+
+    function triviaQuestions () {
+
+    };
+
 
 //first window pops up - start button - make it disappear on click function
 //source: https://www.youtube.com/watch?v=RCFzfym8RvU
-    $("button.start-button").click(function(){
-        let element = document.getElementById("div.trivia-window");
-        element.style.display = "hidden";
-
+    $("#start-game-button").click(function(){
+        $("#start-game-button").css("display","none");
+        $("#trivia-text").css("display","none");
+        $("#trivia-text2").css("display","none");
+        $("#trivia-text3").css("display","none");
 //when start button is clicked: second window pops up, timer begins
-        let elementAppear = document.getElementById("div.quiz");
-        elementAppear.style.diplay = "show";
+        // let elementAppear = document.getElementById("#div.quiz");
+        // elementAppear.style.diplay = "show";
     });
 
 });

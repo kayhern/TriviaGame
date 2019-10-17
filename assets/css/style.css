@@ -21,8 +21,6 @@ body {
 }
 
 div.start-game-button {
-/* Thank you, Lisa, for the tip on hiding the button */
-    display: none !important;
     color: white !important;
 }
 
