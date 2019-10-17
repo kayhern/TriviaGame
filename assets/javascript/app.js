@@ -7,15 +7,14 @@ $(document).ready(function(){
     let elementAppear = [];
 
     //writing questions in as javascript:
+    let question0 = "";
     let question1 = "";
     let question2 = "";
     let question3 = "";
     let question4 = "";
     let question5 = "";
-    let question6 = "";
-    let question7 = "";
-    let question8 = "";
 
+    //use phone number activity
     function triviaQuestions () {
 
     };
@@ -28,10 +27,13 @@ $(document).ready(function(){
         $("#trivia-text").css("display","none");
         $("#trivia-text2").css("display","none");
         $("#trivia-text3").css("display","none");
-//when start button is clicked: second window pops up, timer begins
+//when start button is clicked: display pops up, timer begins
         // let elementAppear = document.getElementById("#div.quiz");
         // elementAppear.style.diplay = "show";
+        triviaQuestions();
     });
+
+
 
 });
 
