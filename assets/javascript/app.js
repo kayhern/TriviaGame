@@ -1,6 +1,23 @@
-//first window pops up - start button - resolve this by using CSS function
+$(document).ready(function(){
 
-//when start button is clicked: first window disappears, second window pops up, timer begins
+    let numberCorrect = 0;
+    let numberIncorrect = 0;
+    let numberUnanswered = 0;
+    let timeQuiz = 1200;
+
+//first window pops up - start button - make it disappear on click function
+//source: https://www.youtube.com/watch?v=RCFzfym8RvU
+    $("start-button").click(function(){
+        let element = document.getElementById("trivia-window");
+        element.style.display = "hidden";
+
+//when start button is clicked: second window pops up, timer begins
+        let elementAppear = document.getElementById("");
+        elementAppear.style.diplay = "show";
+    });
+
+});
+
 
 //timer is counting down from two minutes; when timer goes up the player loses
 
@@ -21,5 +38,3 @@
 //when user selects answer to question8 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
 
 //when user clicked finish: popup window showing number of correct, number of incorrect, number of unanswered
-
-//in CSS define button and timer set display: none

@@ -1,13 +1,30 @@
+/* CSS file is used to supplement the elements not covered by the Bootstrap CSS*/
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-image: url("/Users/khernandez/GitHub/TriviaGame/assets/images/photo-1456154875099-97a3a56074d3.png");
     background-repeat: repeat-x;
-    color: floralwhite !important;
-};
+    
+}
 
-.content {
-    background-color: navy;
-};
+#trivia-window {
+    background-color: navy !important;
+    opacity: 0.9;
+    color: floralwhite !important;
+    text-align: center !important;
+    margin-top: 200px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-style: dotted !important;
+    border-color: white;
+}
+
+div.start-game-button {
+/* Thank you, Lisa, for the tip on hiding the button */
+    display: none !important;
+    color: white !important;
+}
 
 
 
