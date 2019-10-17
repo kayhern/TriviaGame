@@ -7,12 +7,12 @@ $(document).ready(function(){
 
 //first window pops up - start button - make it disappear on click function
 //source: https://www.youtube.com/watch?v=RCFzfym8RvU
-    $("start-button").click(function(){
-        let element = document.getElementById("trivia-window");
+    $("button.start-button").click(function(){
+        let element = document.getElementById("div.trivia-window");
         element.style.display = "hidden";
 
 //when start button is clicked: second window pops up, timer begins
-        let elementAppear = document.getElementById("");
+        let elementAppear = document.getElementById("div.quiz");
         elementAppear.style.diplay = "show";
     });
 
