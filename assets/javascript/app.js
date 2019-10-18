@@ -4,19 +4,27 @@ $(document).ready(function(){
     let numberIncorrect = 0;
     let numberUnanswered = 0;
     let timeQuiz = 1200;
-    let elementAppear = [];
 
     //writing questions in as javascript:
-    let question0 = "";
+    let question0 = [{
+        "Q": "Which fruit does not grow in the South?",
+        "A": "apples",
+        "B": "oranges",
+        "C": "bananas",
+        "D": "kiwis",
+    }];
+    console.log(question0[0].D);
     let question1 = "";
     let question2 = "";
     let question3 = "";
     let question4 = "";
     let question5 = "";
 
+
     //use phone number activity
     function triviaQuestions () {
-
+        
+        $("#trivia-window").html(question0);
     };
 
 
@@ -29,7 +37,6 @@ $(document).ready(function(){
         $("#trivia-text3").css("display","none");
 //when start button is clicked: display pops up, timer begins
         // let elementAppear = document.getElementById("#div.quiz");
-        // elementAppear.style.diplay = "show";
         triviaQuestions();
     });
 
