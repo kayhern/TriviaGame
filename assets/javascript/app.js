@@ -20,16 +20,17 @@ $(document).ready(function(){
     let question4 = "";
     let question5 = "";
 
-
     //use phone number activity
+    //source: 
     function triviaQuestions () {
         
-        $("#trivia-window").html(question0);
+        $("#trivia-window").html(list);
     };
 
 
 //first window pops up - start button - make it disappear on click function
 //source: https://www.youtube.com/watch?v=RCFzfym8RvU
+
     $("#start-game-button").click(function(){
         $("#start-game-button").css("display","none");
         $("#trivia-text").css("display","none");
@@ -64,3 +65,5 @@ $(document).ready(function(){
 //when user selects answer to question8 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
 
 //when user clicked finish: popup window showing number of correct, number of incorrect, number of unanswered
+//source: https://www.geeksforgeeks.org/how-to-clear-the-content-of-a-div-using-javascript/
+//--REMOVE CHILD TO REMOVE QUESTIONS
