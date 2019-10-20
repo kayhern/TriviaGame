@@ -1,38 +1,35 @@
 $(document).ready(function(){
 //source for javascript multiple choice questions to appear as a variable: https://www.sitepoint.com/simple-javascript-quiz/
 
-let timeLeft = 20;
+let timeLeft = 60;
 let numberCorrect = 0;
 let numberIncorrect = 0;
 let numberUnanswered = 0;
 let quizWindow = $("#trivia-window");
 let timerWindow = $("#Timer");
+let results = $("#Results");
 
 const quizQuestions = [
     {
-      question: "Who is the strongest?",
-      answers: ["Superman", "The Terminator", "Waluigi, obviously", "None of these"],
-      correctAnswer: "Superman",
+//source for questions: https://en.wikipedia.org/wiki/Galactic_Center
+      question: "What is the center of the Milky Way Galaxy called?",
+      answers: ["Galactic Center", "Norman", "Wolf-Rayet", "None of these"],
+      correctAnswer: "Galactic Center",
     },
+
   ];
-
-//container to show results used when user clicked finish in the other function below
-
-//when the user is finished and clicks the finish button then results appear
-
-//OR when the timer goes off the results will appear
-
-//when user clicked finish: popup window showing number of correct, number of incorrect, number of unanswered or when the last answer is finished the results appear?
 
 //source: https://www.geeksforgeeks.org/how-to-clear-the-content-of-a-div-using-javascript/
 //--REMOVE CHILD TO REMOVE QUESTIONS
 
   function showResults() {
-
+    results.append("<p> Correct: " + numberCorrect + "</p><br>" + "<p> Incorrect: " + numberIncorrect + "</p><br>" + "<p> Unanswered" + numberUnanswered + "</p>");
   };
 
+
   function timedTrivia() {
-    timerWindow.append("<h1>" + timeLeft + "</h1>")
+    timerWindow.append("<h1>" + timeLeft + "</h1>");
+    setTimeout(function(){ timeLeft--;}, 60000);
   };
 
   function showQuestions() {
@@ -59,6 +56,10 @@ const quizQuestions = [
         };
         console.log(numberCorrect)
         console.log(numberIncorrect)
+    //if the answer does not equal answers of any kind, then increate unanswered number
+        if (answer !== quizQuestions.answers) {
+            numberUnanswered++;
+        };
     });
 
 
