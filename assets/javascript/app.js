@@ -6,6 +6,7 @@ let numberCorrect = 0;
 let numberIncorrect = 0;
 let numberUnanswered = 0;
 let quizWindow = $("#trivia-window");
+let timerWindow = $("#Timer");
 
 const quizQuestions = [
     {
@@ -30,19 +31,9 @@ const quizQuestions = [
 
   };
 
-  $(function(){
-    let time = 10;
-    //timer source: https://www.youtube.com/watch?v=65cQXbP_Hws
-    function timeLeft(){
-        setTimeout(redirect, 10000);
-        $("#timerDisplay").html(time);
-        if(time === 0){
-            showResults();
-        }
-        time--;
-    };
-
-  });
+  function timedTrivia() {
+    timerWindow.append("<h1>" + timeLeft + "</h1>")
+  };
 
   function showQuestions() {
 //display questions
@@ -83,7 +74,7 @@ const quizQuestions = [
         $("#trivia-text3").css("display","none");
 //when start button is clicked: display pops up, timer begins
        showQuestions();
-     //  timedTrivia();
+        timedTrivia();
     });
 });
 
