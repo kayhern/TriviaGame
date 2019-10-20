@@ -1,78 +1,76 @@
-//I am going to make a huge document.ready function that contains:
-//-trivia game
-//--within trivia game contains questions, ability to diplay questions, show resules, show timer
-
 $(document).ready(function(){
 //source for javascript multiple choice questions to appear as a variable: https://www.sitepoint.com/simple-javascript-quiz/
 
-function theEntireGame(){
-
+let timeLeft = 20;
 let numberCorrect = 0;
 let numberIncorrect = 0;
 let numberUnanswered = 0;
-let timeQuiz = 1200;
+let quizWindow = $("#trivia-window");
 
 const quizQuestions = [
     {
       question: "Who is the strongest?",
-      answers: {
-        a: "Superman",
-        b: "The Terminator",
-        c: "Waluigi, obviously",
-        d: ""
-      },
-      correctAnswer: ""
+      answers: ["Superman", "The Terminator", "Waluigi, obviously", "None of these"],
+      correctAnswer: "Superman",
     },
-    {
-      question: "What is the best site ever created?",
-      answers: {
-        a: "SitePoint",
-        b: "Simple Steps Code",
-        c: "Trick question; they're both the best",
-        d: ""
-      },
-      correctAnswer: ""
-    },
-    {
-      question: "Where is Waldo really?",
-      answers: {
-        a: "Antarctica",
-        b: "Exploring the Pacific Ocean",
-        c: "Sitting in a tree",
-        d: "Minding his own business, so stop asking"
-      },
-      correctAnswer: "d"
-    },
-    {
-        question: "Where is Waldo really?",
-        answers: {
-          a: "Antarctica",
-          b: "Exploring the Pacific Ocean",
-          c: "Sitting in a tree",
-          d: "Minding his own business, so stop asking"
-        },
-        correctAnswer: "d"
-      },
   ];
 
-//add the timer somehow????
-
- //make the questions appear on the page using for Each method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?v=control
-    function showQuestions() {
-
-    };
-
 //container to show results used when user clicked finish in the other function below
-    function results() {
 
-    };
+//when the user is finished and clicks the finish button then results appear
+
+//OR when the timer goes off the results will appear
 
 //when user clicked finish: popup window showing number of correct, number of incorrect, number of unanswered or when the last answer is finished the results appear?
+
 //source: https://www.geeksforgeeks.org/how-to-clear-the-content-of-a-div-using-javascript/
 //--REMOVE CHILD TO REMOVE QUESTIONS
-    $("#complete-game-button").click(function() {
-        results();
+
+  function showResults() {
+
+  };
+
+  $(function(){
+    let time = 10;
+    //timer source: https://www.youtube.com/watch?v=65cQXbP_Hws
+    function timeLeft(){
+        setTimeout(redirect, 10000);
+        $("#timerDisplay").html(time);
+        if(time === 0){
+            showResults();
+        }
+        time--;
+    };
+
+  });
+
+  function showQuestions() {
+//display questions
+    for (let i = 0; i < quizQuestions.length; i++ ){
+        quizWindow.append("<p>" + quizQuestions[i].question + "</p>");
+//display answers using a nested for loop
+        for (let j = 0; j < quizQuestions[i].answers.length; j++){
+            quizWindow.append("<input type='radio' name='question-" + i + "' value='" + quizQuestions[i].answers[j] + "''>" + quizQuestions[i].answers[j] + "<br>");
+        }
+    }
+
+//select a single radio button at a time
+    $("input").on("click", function(){
+        let answer = $("input value :checked");
+        // console.log($().html);
+        // console.log($("input :checked"))
+        if (answer === quizQuestions.correctAnswer) {
+            numberCorrect++;
+            console.log(numberCorrect);
+        }
+        else if (answer !== quizQuestions.correctAnswer) {
+            numberIncorrect++;
+        };
+        console.log(numberCorrect)
+        console.log(numberIncorrect)
     });
+
+
 };
 
 //first window pops up - start button - make it disappear on click function
@@ -84,21 +82,8 @@ const quizQuestions = [
         $("#trivia-text2").css("display","none");
         $("#trivia-text3").css("display","none");
 //when start button is clicked: display pops up, timer begins
-        // let elementAppear = document.getElementById("#div.quiz");
-        showQuestions();
+       showQuestions();
+     //  timedTrivia();
     });
 });
-
-
-//timer is counting down from two minutes; when timer goes up the player loses
-
-//when user selects answer to question1 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
-
-//when user selects answer to question2 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
-
-//when user selects answer to question3 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
-
-//when user selects answer to question4 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
-
-//when user selects answer to question5 : if answer is correct then corect number goes up else incorrect answer goes up or else unanswered goes up
 
